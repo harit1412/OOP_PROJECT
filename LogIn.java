@@ -34,7 +34,7 @@ class CheckUser {
     }
 }
 
-public class LogIn extends Thread {
+public class LogIn extends Flight_Type  {
     public static void main(String[] args) throws Exception, InterruptedException {
         Scanner sc = new Scanner(System.in);
         String Username;
@@ -46,17 +46,12 @@ public class LogIn extends Thread {
         Password = sc.next();
 
         boolean IsUser = CheckUser.Check(Username, Password);
-        synchronized (currentThread()) {
 
-            Loading.start_load();
-            // notify();
-        }
         if (IsUser) {
             Flight_Type Ft = new Flight_Type();
             Ft.Select_Type();
         } else {
             throw new Exception("Invalid User");
         }
-
     }
 }
