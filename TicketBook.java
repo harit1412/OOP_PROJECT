@@ -6,26 +6,10 @@ interface book {
     void Booking();
 }
 
-public class TicketBook implements book{
-    // String fname;
-    // String lname;
-    // String passport;
-    // int age;
-    // int no_of_ticket;
+public class TicketBook implements book {
 
     public void Booking() {
 
-        // Scanner sc = new Scanner(System.in);
-        // System.out.println("First Name : ");
-        // fname = sc.next();
-        // System.out.println("Last Name : ");
-        // lname = sc.next();
-        // System.out.println("Passport Number : ");
-        // passport = sc.next();
-        // System.out.println("Age : ");
-        // age = sc.nextInt();
-        // System.out.println("Number of tickets : ");
-        // no_of_tic = sc.nextInt();
         System.out.println("Number of passengers : ");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -52,11 +36,9 @@ public class TicketBook implements book{
 
             System.out.println("Gender : ");
             String gender = sc.next();
-            
+
             System.out.println("Departure Date(DD/MM/yyyy) : ");
             String ddate = sc.next();
-
-
 
             List<String> info = new ArrayList<>();
             info.add(first);
@@ -70,7 +52,14 @@ public class TicketBook implements book{
             person.add(info);
 
         }
-        System.out.println(person);    
+     
+
+        for (int i = 0; i < n; i++) {
+
+            System.out.println(person.get(i));
+
+        }
+        System.out.println(info1.get(0));
 
     }
 }
