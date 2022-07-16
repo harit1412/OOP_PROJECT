@@ -40,6 +40,8 @@ public class LogIn extends Flight_Type  {
         String Username;
         String Password;
 
+        
+
         System.out.println("Username : ");
         Username = sc.next();
         System.out.println("Password : ");
