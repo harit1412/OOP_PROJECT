@@ -3,10 +3,16 @@ package OOP_PROJECT;
 import java.util.Scanner;
 
 abstract class Dflight {
-    
+
     static int Dflight_seats[] = new int[5];
+    static int Dflight_price[] = new int[5];
     static String Dflights[] = new String[5];
     static {
+        Dflight_price[0] = 1200;
+        Dflight_price[1] = 1000;
+        Dflight_price[2] = 5110;
+        Dflight_price[3] = 2010;
+        Dflight_price[4] = 1300;
         for (int i = 0; i < Dflight_seats.length; i++) {
 
             Dflight_seats[i] = 10;
@@ -25,21 +31,22 @@ abstract class Dflight {
 
 class AdminDFLight extends Dflight {
 
-    String[] Doflights = new String[5];
+    // static String[] Doflights = new String[5];
 
     AdminDFLight() {
-        Doflights[0] = "1.Rajkot -> Surat";
-        Doflights[1] = "2.Junagadh -> Rajkot";
-        Doflights[2] = "3.Surat -> Vadoodara";
-        Doflights[3] = "4.Surat -> Rajkot";
-        Doflights[4] = "5.Vadodara -> Ahemdabad";
+        Dflights[0] = "1.Rajkot->Surat";
+        Dflights[1] = "2.Junagadh->Rajkot";
+        Dflights[2] = "3.Surat->Vadoodara";
+        Dflights[3] = "4.Surat->Rajkot";
+        Dflights[4] = "5.Vadodara->Ahemdabad";
     }
 
     public void Flight_List() {
-
+        System.out.println("\n------ LIST OF DOMESTIC FLIGHTS ------\n");
         for (int i = 0; i < 5; i++) {
-            System.out.println(Doflights[i]);
+            System.out.println(Dflights[i]);
         }
+        System.out.println("\n-----------------------------------------------");
     }
 
     public void selectFlights() throws Exception, InterruptedException {
@@ -49,21 +56,33 @@ class AdminDFLight extends Dflight {
         try {
             int b = a / Dflight_seats[a - 1];
             TicketBook ok = new TicketBook();
-            ok.Booking(0,a);
+            ok.Booking(0, a);
         } catch (Exception e) {
-            throw new Exception("No Seats available for selected Dflight");
+            throw new Exception("No Seats available for selected Domestic flight");
         }
 
     }
 
     protected void edit() {
         Flight_List();
-        System.out.println("Which Dflight you want to edit");
+        System.out.println("Which Dommestic flight you want to edit");
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        System.out.println("Enter new Dflight details: ");
+        System.out.println("Enter new Domestic flight details : ");
         String s = sc.next();
-        Doflights[a - 1] = s;
+        Dflights[a - 1] = s;
+
+    }
+
+    protected void Change_Price() {
+        Scanner sc = new Scanner(System.in);
+        Flight_List();
+        System.out.println("Which Dommestic flight you want to edit");
+        int s;
+        s = sc.nextInt();
+        System.out.println("Old Price : " + Dflight_price[s - 1]);
+        System.out.println("Enter new Price : ");
+        Dflight_price[s - 1] = sc.nextInt();
 
     }
 

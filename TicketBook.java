@@ -10,10 +10,12 @@ public class TicketBook implements book {
 
     public void Booking(int a, int f) {
 
+        System.out.println("---------------------------------------------");
+        System.out.println("------------- PASSNGERS DETAILS---------------");
+
         System.out.println("Number of passengers : ");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
 
         String first[] = new String[n];
         String last[] = new String[n];
@@ -52,7 +54,24 @@ public class TicketBook implements book {
                             + Inflight.Inflight_seats[f - 1]);
 
         }
+        TicketPrint prin = new TicketPrint();
+        prin.Print(n, first, last, pass, age, gender, ddate);
 
     }
 
 }
+
+/*
+ * 
+ * -----Ticket-----
+ * Passenger - i :>
+ * name:
+ * pass:
+ * age:
+ * gender:
+ * ddate:
+ * 
+ * 
+ * 
+ * 
+ */

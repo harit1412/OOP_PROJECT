@@ -42,7 +42,7 @@ public class LogIn extends Flight_Type  {
 
         System.out.println("------------------------------------------------");
         System.out.println("----- Welcome to the Flight Booking System -----");
-        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------\n");
 
         System.out.println("======LOGIN PAGE======\n");
 
