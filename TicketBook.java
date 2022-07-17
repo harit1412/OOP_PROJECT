@@ -3,63 +3,56 @@ package OOP_PROJECT;
 import java.util.*;
 
 interface book {
-    void Booking();
+    void Booking(int a, int f);
 }
 
 public class TicketBook implements book {
 
-    public void Booking() {
+    public void Booking(int a, int f) {
 
         System.out.println("Number of passengers : ");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        List<List<String>> person = new ArrayList<List<String>>();
-        List<String> info1 = new ArrayList<>();
 
+        String first[] = new String[n];
+        String last[] = new String[n];
+        String pass[] = new String[n];
+        String age[] = new String[n];
+        String gender[] = new String[n];
+        String ddate[] = new String[n];
         for (int i = 0; i < n; i++) {
 
             System.out.println("First Name : ");
-            String first = sc.next();
-            // fname.add(first);
+            first[i] = sc.next();
 
             System.out.println("Last Name : ");
-            String last = sc.next();
-            // fname.add(last);
+            last[i] = sc.next();
 
             System.out.println("Passport Number : ");
-            String pass = sc.next();
-            // fname.add(pass);
+            pass[i] = sc.next();
 
             System.out.println("Age : ");
-            String age = sc.next();
+            age[i] = sc.next();
 
             System.out.println("Gender : ");
-            String gender = sc.next();
+            gender[i] = sc.next();
 
             System.out.println("Departure Date(DD/MM/yyyy) : ");
-            String ddate = sc.next();
-
-            List<String> info = new ArrayList<>();
-            info.add(first);
-            info.add(last);
-            info.add(pass);
-            info.add(age);
-            info.add(ddate);
-
-            info1.addAll(info);
-
-            person.add(info);
+            ddate[i] = sc.next();
+        }
+        if (a == 0) {
+            Dflight.Dflight_seats[f - 1] -= n;
+            System.out
+                    .println("Availalable seats in " + Dflight.Dflights[f - 1] + " is " + Dflight.Dflight_seats[f - 1]);
+        } else {
+            Inflight.Inflight_seats[f - 1] -= n;
+            System.out
+                    .println("Availalable seats in " + Inflight.Inflights[f - 1] + " is "
+                            + Inflight.Inflight_seats[f - 1]);
 
         }
-     
-
-        for (int i = 0; i < n; i++) {
-
-            System.out.println(person.get(i));
-
-        }
-        System.out.println(info1.get(0));
 
     }
+
 }

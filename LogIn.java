@@ -40,12 +40,18 @@ public class LogIn extends Flight_Type  {
         String Username;
         String Password;
 
-        
+        System.out.println("------------------------------------------------");
+        System.out.println("----- Welcome to the Flight Booking System -----");
+        System.out.println("------------------------------------------------");
 
+        System.out.println("======LOGIN PAGE======\n");
+
+        System.out.println("----------------------------------");
         System.out.println("Username : ");
         Username = sc.next();
         System.out.println("Password : ");
         Password = sc.next();
+        System.out.println("----------------------------------");
 
         boolean IsUser = CheckUser.Check(Username, Password);
 
