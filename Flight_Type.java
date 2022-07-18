@@ -2,10 +2,12 @@ package OOP_PROJECT;
 
 import java.util.*;
 
-public class Flight_Type {
+public class Flight_Type extends Thread {
 
     void Select_Type() throws Exception {
 
+        start_load ob = new start_load();
+        ob.load();
         System.out.println("\n==============================================================\n");
         System.out.println("------ CHOOSE THE SUITABLE FLIGHT TYPE ------\n");
         System.out.println("1. Domestic Flights");

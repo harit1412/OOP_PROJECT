@@ -10,7 +10,7 @@ public class TicketPrint extends TicketBook {
     int total_amount;
 
     void Print(int n, String first[], String last[], String pass[], String age[], String gender[], String ddate[],
-            int a, int f) {
+            int a, int f) throws Exception {
 
         if (a == 0) {
             total_amount = n * (Dflight.Dflight_price[f - 1]);
@@ -41,6 +41,9 @@ public class TicketPrint extends TicketBook {
 
             System.out.println("Total amount to be paid : " + total_amount);
         }
+
+        LogIn wow = new LogIn();
+        wow.Login();
 
     }
 

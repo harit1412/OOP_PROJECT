@@ -2,7 +2,7 @@ package OOP_PROJECT;
 
 import java.util.Scanner;
 
-public class Admin extends TicketPrint{
+public class Admin extends TicketPrint {
     void FirstPage() throws Exception {
 
         System.out.println("1.Book");
@@ -48,10 +48,9 @@ public class Admin extends TicketPrint{
                         break;
                 }
                 break;
-            // case 4:
-            //     TicketPrint println = new TicketPrint();
-            //     p.Print(n, first, last, pass, age, gender, ddate);
+            case 4:
+                System.out.println(TicketBook.Person_Details);
         }
 
-    } 
+    }
 }

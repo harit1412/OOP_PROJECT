@@ -45,7 +45,14 @@ public class LogIn extends Flight_Type {
     static String Username;
     static String Password;
 
-    public static void main(String[] args) throws Exception, InterruptedException {
+    LogIn() {
+    }
+
+    LogIn(boolean b) {
+
+    }
+
+    void Login() throws Exception {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("------------------------------------------------");
@@ -72,5 +79,37 @@ public class LogIn extends Flight_Type {
         } else {
             throw new Exception("Invalid User");
         }
+    }
+
+    public static void main(String[] args) throws Exception, InterruptedException {
+        LogIn ob3 = new LogIn();
+        ob3.Login();
+
+        // Scanner sc = new Scanner(System.in);
+
+        // System.out.println("------------------------------------------------");
+        // System.out.println("----- Welcome to the Flight Booking System -----");
+        // System.out.println("------------------------------------------------\n");
+
+        // System.out.println("======LOGIN PAGE======\n");
+
+        // System.out.println("----------------------------------");
+        // System.out.println("Username : ");
+        // LogIn.Username = sc.next();
+        // System.out.println("Password : ");
+        // LogIn.Password = sc.next();
+        // System.out.println("----------------------------------");
+        // boolean ok = CheckUser.checkUser(LogIn.Username, LogIn.Password);
+
+        // boolean ok2 = CheckUser.checkAdmin(LogIn.Username, LogIn.Password);
+        // if (ok == true) {
+        // Flight_Type Ft = new Flight_Type();
+        // Ft.Select_Type();
+        // } else if (ok2 == true) {
+        // Admin ad = new Admin();
+        // ad.FirstPage();
+        // } else {
+        // throw new Exception("Invalid User");
+        // }
     }
 }
