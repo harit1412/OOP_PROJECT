@@ -10,6 +10,9 @@ public class TicketBook implements book {
 
     public void Booking(int a, int f) {
 
+        //a0 -> domestic
+        //f1 -> 0th arr
+
         System.out.println("---------------------------------------------");
         System.out.println("------------- PASSNGERS DETAILS---------------");
 
@@ -55,7 +58,7 @@ public class TicketBook implements book {
 
         }
         TicketPrint prin = new TicketPrint();
-        prin.Print(n, first, last, pass, age, gender, ddate);
+        prin.Print(n, first, last, pass, age, gender, ddate,a,f);
 
     }
 

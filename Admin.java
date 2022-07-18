@@ -2,12 +2,13 @@ package OOP_PROJECT;
 
 import java.util.Scanner;
 
-public class Admin {
+public class Admin extends TicketPrint{
     void FirstPage() throws Exception {
 
         System.out.println("1.Book");
         System.out.println("2.Edit Flight");
         System.out.println("3.Edit Price");
+        System.out.println("4.Print the passenger list");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         switch (n) {
@@ -47,14 +48,10 @@ public class Admin {
                         break;
                 }
                 break;
-
+            // case 4:
+            //     TicketPrint println = new TicketPrint();
+            //     p.Print(n, first, last, pass, age, gender, ddate);
         }
 
-    }
-
-  
-    public static void main(String[] args) throws Exception {
-       Admin o = new Admin();
-        o.FirstPage();
-    }
+    } 
 }
