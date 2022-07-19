@@ -18,6 +18,11 @@ abstract class Inflight {
 
             Inflight_seats[i] = 10;
         }
+        Inflights[0] = "1.Delhi->USA";
+        Inflights[1] = "2.Mumbai->Germany";
+        Inflights[2] = "3.Hydrabad->Africa";
+        Inflights[3] = "4.Ahemdabad->Dubai";
+        Inflights[4] = "5.Chennai->New-Jersy";
     }
 
     abstract void Flight_List();
@@ -33,15 +38,13 @@ abstract class Inflight {
 class AdminINFLight extends Inflight {
 
     AdminINFLight() {
-        Inflights[0] = "1.Delhi->USA";
-        Inflights[1] = "2.Mumbai->Germany";
-        Inflights[2] = "3.Hydrabad->Africa";
-        Inflights[3] = "4.Ahemdabad->Dubai";
-        Inflights[4] = "5.Chennai->New-Jersy";
     }
 
     public void Flight_List() {
-        System.out.println("\n------ LIST OF INTERNATIONAL FLIGHTS ------\n");
+        System.out.println("\n-------------------------------------------");
+        System.out.println("------ LIST OF INTERNATIONAL FLIGHTS ------");
+        System.out.println("-------------------------------------------\n");
+
         for (int i = 0; i < 5; i++) {
             System.out.println(Inflights[i]);
         }
@@ -57,31 +60,35 @@ class AdminINFLight extends Inflight {
             TicketBook ok = new TicketBook();
             ok.Booking(1, a);
         } catch (Exception e) {
-            throw new Exception("No Seats available for selected International flight");
+            throw new Exception("\nNo Seats available for selected International flight");
         }
 
     }
 
-    protected void edit() {
+    protected void edit() throws Exception {
         Flight_List();
-        System.out.println("Which International flight you want to edit : ");
+        System.out.println("\nWhich International flight you want to edit : ");
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        System.out.println("Enter new International flight details : ");
+        System.out.println("\nEnter new International flight details : ");
         String s = sc.next();
         Inflights[a - 1] = s;
-
+        Inflight_seats[a - 1] = 10;
+        LogIn ob2 = new LogIn();
+        ob2.Login();
     }
 
-    protected void Change_Price() {
+    protected void Change_Price() throws Exception {
         Scanner sc = new Scanner(System.in);
         Flight_List();
-        System.out.println("Which International flight you want to edit");
+        System.out.println("\nWhich International flight you want to edit");
         int s;
         s = sc.nextInt();
-        System.out.println("Old Price : " + Inflight_price[s - 1]);
-        System.out.println("Enter new Price : ");
+        System.out.println("\nOld Price : " + Inflight_price[s - 1]);
+        System.out.println("\nEnter new Price : ");
         Inflight_price[s - 1] = sc.nextInt();
+        LogIn ob2 = new LogIn();
+        ob2.Login();
 
     }
 }
@@ -98,14 +105,3 @@ public class International {
     }
 
 }
-// bookticket
-// back button
-// admin delete and add the flight and change the price
-// array string\
-// in the booking we get the number of passenger from the user and add
-// there name,age,gender,passport details, date,
-// check that the flight is availoble on that day or not
-// hide edit function's functionality from the user
-
-// business
-//

@@ -1,12 +1,12 @@
 package OOP_PROJECT;
 
 public class TicketPrint extends TicketBook {
-    static {
-        System.out.println("==================================================");
+    static{
+        System.out.println("\n==================================================");
         System.out.println("--------------------- TICKET ---------------------");
         System.out.println("==================================================");
-
     }
+
     int total_amount;
 
     void Print(int n, String first[], String last[], String pass[], String age[], String gender[], String ddate[],
@@ -20,26 +20,29 @@ public class TicketPrint extends TicketBook {
         }
 
         for (int i = 0; i < n; i++) {
-            System.out.println("---------------------------------------");
+            System.out.println("--------------------------------------------------");
             System.out.println("Passanger : " + (i + 1));
             System.out.println("Name : " + first[i] + " " + last[i]);
             System.out.println("Passport Number : " + pass[i]);
             System.out.println("Age : " + age[i]);
             System.out.println("Gender : " + gender[i]);
             System.out.println("Departure Date : " + ddate[i]);
-            System.out.println("---------------------------------------");
+            System.out.println("--------------------------------------------------");
 
         }
-        LogIn ob = new LogIn();
+        
         PremiumUsers ob2 = new PremiumUsers();
         // System.out.println(ob2.IsPremiumUsers(ob.Username));
         // System.out.println(LogIn.Username);
         if (ob2.IsPremiumUsers(LogIn.Username)) {
+            System.out.println("\n--------------------------------------------------");
             System.out
                     .println("Total amount to be paid [20% Discounted :)] : " + (total_amount - (total_amount * 0.2)));
+            System.out.println("--------------------------------------------------");
         } else {
-
+            System.out.println("\n--------------------------------------------------");
             System.out.println("Total amount to be paid : " + total_amount);
+            System.out.println("--------------------------------------------------");
         }
 
         LogIn wow = new LogIn();

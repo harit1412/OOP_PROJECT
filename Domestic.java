@@ -14,9 +14,13 @@ abstract class Dflight {
         Dflight_price[3] = 2010;
         Dflight_price[4] = 1300;
         for (int i = 0; i < Dflight_seats.length; i++) {
-
             Dflight_seats[i] = 10;
         }
+        Dflights[0] = "1.Rajkot->Surat";
+        Dflights[1] = "2.Junagadh->Rajkot";
+        Dflights[2] = "3.Surat->Vadoodara";
+        Dflights[3] = "4.Surat->Rajkot";
+        Dflights[4] = "5.Vadodara->Ahemdabad";
     }
 
     abstract void Flight_List();
@@ -34,15 +38,14 @@ class AdminDFLight extends Dflight {
     // static String[] Doflights = new String[5];
 
     AdminDFLight() {
-        Dflights[0] = "1.Rajkot->Surat";
-        Dflights[1] = "2.Junagadh->Rajkot";
-        Dflights[2] = "3.Surat->Vadoodara";
-        Dflights[3] = "4.Surat->Rajkot";
-        Dflights[4] = "5.Vadodara->Ahemdabad";
+
     }
 
     public void Flight_List() {
-        System.out.println("\n------ LIST OF DOMESTIC FLIGHTS ------\n");
+        System.out.println("\n--------------------------------------");
+        System.out.println("------ LIST OF DOMESTIC FLIGHTS ------");
+        System.out.println("--------------------------------------\n");
+
         for (int i = 0; i < 5; i++) {
             System.out.println(Dflights[i]);
         }
@@ -52,6 +55,8 @@ class AdminDFLight extends Dflight {
     public void selectFlights() throws Exception, InterruptedException {
         int a;
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("\nChoose the flight from the above list");
         a = sc.nextInt();
         try {
             int b = a / Dflight_seats[a - 1];
@@ -65,22 +70,23 @@ class AdminDFLight extends Dflight {
 
     protected void edit() {
         Flight_List();
-        System.out.println("Which Dommestic flight you want to edit");
+        System.out.println("\nWhich Dommestic flight you want to edit");
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        System.out.println("Enter new Domestic flight details : ");
+        System.out.println("\nEnter new Domestic flight details : ");
         String s = sc.next();
         Dflights[a - 1] = s;
+        Dflight_seats[a - 1] = 10;
 
     }
 
     protected void Change_Price() {
         Scanner sc = new Scanner(System.in);
         Flight_List();
-        System.out.println("Which Dommestic flight you want to edit");
+        System.out.println("\nWhich Dommestic flight you want to edit");
         int s;
         s = sc.nextInt();
-        System.out.println("Old Price : " + Dflight_price[s - 1]);
+        System.out.println("\nOld Price : " + Dflight_price[s - 1]);
         System.out.println("Enter new Price : ");
         Dflight_price[s - 1] = sc.nextInt();
 
@@ -95,6 +101,7 @@ public class Domestic {
     void Domestics() throws InterruptedException, Exception {
         ob.Flight_List();
         ob.selectFlights();
+        // ob.Change_Price();
     }
 
 }

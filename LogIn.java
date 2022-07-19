@@ -3,6 +3,7 @@ package OOP_PROJECT;
 import java.util.Scanner;
 
 class CheckUser {
+
     static final protected String[][] lst = new String[6][6];
     static int i = 5;
 
@@ -22,15 +23,12 @@ class CheckUser {
     static boolean checkUser(String a, String b) {
         boolean ans = false;
         for (int i = 0; i < 5; i++) {
-            // System.out.println(lst[i][0] + " " + lst[i][1]);
             if (a.equals(lst[i][0]) && b.equals(lst[i][1])) {
                 ans = true;
                 break;
             }
-
         }
         return ans;
-
     }
 
     static boolean checkAdmin(String a, String b) {
@@ -41,25 +39,20 @@ class CheckUser {
     }
 }
 
-public class LogIn extends Flight_Type {
+public class LogIn {
     static String Username;
     static String Password;
-
-    LogIn() {
-    }
-
-    LogIn(boolean b) {
-
-    }
 
     void Login() throws Exception {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("------------------------------------------------");
+        System.out.println("\n------------------------------------------------");
         System.out.println("----- Welcome to the Flight Booking System -----");
         System.out.println("------------------------------------------------\n");
 
-        System.out.println("======LOGIN PAGE======\n");
+        System.out.println("\n========================");
+        System.out.println("====== LOGIN PAGE ======");
+        System.out.println("========================");
 
         System.out.println("----------------------------------");
         System.out.println("Username : ");
@@ -67,17 +60,19 @@ public class LogIn extends Flight_Type {
         System.out.println("Password : ");
         LogIn.Password = sc.next();
         System.out.println("----------------------------------");
-        boolean ok = CheckUser.checkUser(LogIn.Username, LogIn.Password);
 
-        boolean ok2 = CheckUser.checkAdmin(LogIn.Username, LogIn.Password);
-        if (ok == true) {
+        boolean IsUser = CheckUser.checkUser(LogIn.Username, LogIn.Password);
+
+        boolean IsAdmin = CheckUser.checkAdmin(LogIn.Username, LogIn.Password);
+
+        if (IsUser == true) {
             Flight_Type Ft = new Flight_Type();
             Ft.Select_Type();
-        } else if (ok2 == true) {
+        } else if (IsAdmin == true) {
             Admin ad = new Admin();
             ad.FirstPage();
         } else {
-            throw new Exception("Invalid User");
+            throw new Exception("\nInvalid User");
         }
     }
 
@@ -99,13 +94,13 @@ public class LogIn extends Flight_Type {
         // System.out.println("Password : ");
         // LogIn.Password = sc.next();
         // System.out.println("----------------------------------");
-        // boolean ok = CheckUser.checkUser(LogIn.Username, LogIn.Password);
+        // boolean IsUser = CheckUser.checkUser(LogIn.Username, LogIn.Password);
 
-        // boolean ok2 = CheckUser.checkAdmin(LogIn.Username, LogIn.Password);
-        // if (ok == true) {
+        // boolean IsAdmin = CheckUser.checkAdmin(LogIn.Username, LogIn.Password);
+        // if (IsUser == true) {
         // Flight_Type Ft = new Flight_Type();
         // Ft.Select_Type();
-        // } else if (ok2 == true) {
+        // } else if (IsAdmin == true) {
         // Admin ad = new Admin();
         // ad.FirstPage();
         // } else {

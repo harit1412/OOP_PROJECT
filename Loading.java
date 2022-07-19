@@ -4,34 +4,20 @@ public class Loading extends Thread {
 
     public void run() {
         // synchronized (this) {
-        for (int i = 0; i < 10; i++) {
+        System.out.println("\nProgram is Collecting the data, it takes some time to complete, please wait..");
+        for (int i = 0; i < 20; i++) {
             System.out.print("|");
             try {
                 sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println(e);
             }
         }
-        // this.notify();
-        // }
-        // try {
-        // wait();
-        // } catch (Exception e) {
-        // }
-
     }
-}
 
-// public static void start_load()
-class start_load {
     public void load() throws InterruptedException {
         Loading t = new Loading();
-        t.start();
-        // // wait(); q
-        // synchronized(t){
-        // t.wait();
-        // }
-        // }
+        t.run();
 
     }
 }
