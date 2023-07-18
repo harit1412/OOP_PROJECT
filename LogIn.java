@@ -3,8 +3,11 @@ package OOP_PROJECT;
 import java.util.Scanner;
 
 class CheckUser {
-
-    static final protected String[][] lst = new String[6][6];
+/*
+    --> I have used static because , we know that many people is going to login , so each time person trying to login
+    object of CheckUser will be created , to avoid too much use of memory , it is good to have a static variable.
+*/
+    static protected String[][] lst = new String[6][6];
     static int i = 5;
 
     static {
@@ -40,8 +43,8 @@ class CheckUser {
 }
 
 public class LogIn {
-    static String Username;
-    static String Password;
+     String Username;
+     String Password;
 
     void Login() throws Exception {
         Scanner sc = new Scanner(System.in);
