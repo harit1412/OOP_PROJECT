@@ -76,7 +76,7 @@ public class LogIn {
             Admin ad = new Admin();
             ad.FirstPage();
         } else {
-            throw new Exception("\nInvalid User");
+            throw new Exception("\nInvalid User");   // If it was not registered then we will throw an exception.
         }
     }
 
