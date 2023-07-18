@@ -64,10 +64,11 @@ public class LogIn {
         LogIn.Password = sc.next();
         System.out.println("----------------------------------");
 
+        // Taking Input for Username and Password..
         boolean IsUser = CheckUser.checkUser(LogIn.Username, LogIn.Password);
-
         boolean IsAdmin = CheckUser.checkAdmin(LogIn.Username, LogIn.Password);
 
+        // Whether he/she is an registered user or than object of class will be created accordingly.. 
         if (IsUser == true) {
             Flight_Type Ft = new Flight_Type();
             Ft.Select_Type();
