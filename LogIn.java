@@ -7,7 +7,7 @@ class CheckUser {
     --> I have used static because , we know that many people is going to login , so each time person trying to login
     object of CheckUser will be created , to avoid too much use of memory , it is good to have a static variable.
 */
-    static protected String[][] lst = new String[6][6];
+    static protected String[][] lst = new String[6][6]; // list of people who have registered in sites..
     static int i = 5;
 
     static {
