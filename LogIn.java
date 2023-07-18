@@ -79,32 +79,5 @@ public class LogIn {
     public static void main(String[] args) throws Exception, InterruptedException {
         LogIn ob3 = new LogIn();
         ob3.Login();
-
-        // Scanner sc = new Scanner(System.in);
-
-        // System.out.println("------------------------------------------------");
-        // System.out.println("----- Welcome to the Flight Booking System -----");
-        // System.out.println("------------------------------------------------\n");
-
-        // System.out.println("======LOGIN PAGE======\n");
-
-        // System.out.println("----------------------------------");
-        // System.out.println("Username : ");
-        // LogIn.Username = sc.next();
-        // System.out.println("Password : ");
-        // LogIn.Password = sc.next();
-        // System.out.println("----------------------------------");
-        // boolean IsUser = CheckUser.checkUser(LogIn.Username, LogIn.Password);
-
-        // boolean IsAdmin = CheckUser.checkAdmin(LogIn.Username, LogIn.Password);
-        // if (IsUser == true) {
-        // Flight_Type Ft = new Flight_Type();
-        // Ft.Select_Type();
-        // } else if (IsAdmin == true) {
-        // Admin ad = new Admin();
-        // ad.FirstPage();
-        // } else {
-        // throw new Exception("Invalid User");
-        // }
     }
 }
